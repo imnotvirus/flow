@@ -7,9 +7,9 @@ import ReactFlow, {
   Background,
   Controls,
   Node,
-  ConnectionMode,
   MiniMap,
   Connection,
+  MarkerType,
 } from "reactflow";
 import { zinc } from "tailwindcss/colors";
 import "reactflow/dist/style.css";
@@ -141,6 +141,13 @@ export default function App() {
         edgeTypes={EDGE_TYPES}
         defaultEdgeOptions={{
           type: "default",
+          animated: true,
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+          },
+          markerStart: {
+            type: MarkerType.ArrowClosed,
+          },
         }}
       >
         <Background gap={12} size={2} color={zinc[200]} />
