@@ -9,7 +9,7 @@ interface IProps extends NodeProps {
 }
 const Diamond: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
   return (
-    <div className="bg-violet-500 rounded w-full min-w-[200px] h-full min-h-[200px] rotate-45 ">
+    <div className="bg-violet-500 rounded w-full min-w-[200px] aspect-square h-full min-h-[200px] rotate-45 ">
       <div className="flex justify-between items-center px-2 py-1 relative -rotate-45 overflow-hidden">
         <div className="text-white text-sm font-bold">{id}</div>
         <button
@@ -34,6 +34,7 @@ const Diamond: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
       <NodeResizer
         minWidth={200}
         minHeight={200}
+        keepAspectRatio={true}
         lineClassName="border-blue-400"
         handleClassName="h-3 w-3 bg-white border-2 border-blue-400 rounded"
         isVisible={selected}

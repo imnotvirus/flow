@@ -7,10 +7,10 @@ interface IProps extends NodeProps {
     deleteNode: (nodeId: string) => void;
   };
 }
-const Square: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
+const Circle: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
   return (
-    <div className="bg-violet-500 rounded aspect-square">
-      <div className="flex justify-between items-center px-2 py-1 relative">
+    <div className="w-full min-w-[200px] h-full min-h-[200px] p-2 ">
+      <div className="bg-violet-500 aspect-square rounded-full ">
         <div className="text-white text-sm font-bold">{id}</div>
         <button
           onClick={() => deleteNode(id)}
@@ -34,10 +34,10 @@ const Square: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
       <NodeResizer
         minWidth={200}
         minHeight={200}
-        keepAspectRatio={true}
         lineClassName="border-blue-400"
         handleClassName="h-3 w-3 bg-white border-2 border-blue-400 rounded"
         isVisible={selected}
+        keepAspectRatio={true}
       />
 
       <Handle
@@ -56,4 +56,4 @@ const Square: React.FC<IProps> = ({ selected, data: { id, deleteNode } }) => {
   );
 };
 
-export default Square;
+export default Circle;
